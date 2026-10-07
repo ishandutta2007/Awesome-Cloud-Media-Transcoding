@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#311042"/>
+    </linearGradient>
+    
+    <!-- Title Text Gradient -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+
+    <!-- Glowing effect -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <style>
+      @keyframes floatPulse {
+        0% { transform: translateY(0px) scale(1); opacity: 0.4; }
+        50% { transform: translateY(-12px) scale(1.05); opacity: 0.8; }
+        100% { transform: translateY(0px) scale(1); opacity: 0.4; }
+      }
+      @keyframes dashFlow {
+        0% { stroke-dashoffset: 100; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes waveMotion {
+        0% { transform: translateX(0px); }
+        50% { transform: translateX(-40px); }
+        100% { transform: translateX(0px); }
+      }
+      .bg-orb1 { animation: floatPulse 6s ease-in-out infinite; }
+      .bg-orb2 { animation: floatPulse 8s ease-in-out infinite 2s; }
+      .flow-line { stroke-dasharray: 10, 15; animation: dashFlow 3s linear infinite; }
+      .wave-path { animation: waveMotion 10s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- Dark Background -->
+  <rect width="1200" height="400" fill="url(#bgGrad)" rx="16"/>
+
+  <!-- Dynamic / Animated Background Orbs & Flow Lines (Behind text layer) -->
+  <g opacity="0.6">
+    <circle class="bg-orb1" cx="200" cy="100" r="140" fill="#38bdf8" filter="url(#glow)" opacity="0.3"/>
+    <circle class="bg-orb2" cx="1000" cy="300" r="160" fill="#c084fc" filter="url(#glow)" opacity="0.3"/>
+    
+    <!-- Video Processing Signal Flow Lines -->
+    <path class="flow-line" d="M 50 100 Q 300 50 600 100 T 1150 100" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.5"/>
+    <path class="flow-line" d="M 50 300 Q 300 350 600 300 T 1150 300" fill="none" stroke="#c084fc" stroke-width="2" opacity="0.5"/>
+
+    <!-- Subtle Dynamic Waveform Background -->
+    <path class="wave-path" d="M -50 200 C 150 150 350 250 550 200 C 750 150 950 250 1150 200 C 1350 150 1550 250 1750 200" fill="none" stroke="#818cf8" stroke-width="1.5" opacity="0.25"/>
+  </g>
+
+  <!-- Foreground Title and Subtitle Layer (Always crisp and visible on top) -->
+  <g text-anchor="middle">
+    <!-- Icon / Symbol Graphic -->
+    <g transform="translate(600, 105)">
+      <!-- Cloud + Video Play Icon -->
+      <path d="M -35 0 C -45 -20 -15 -35 0 -25 C 10 -40 40 -35 45 -15 C 60 -15 65 10 50 20 C 50 25 -30 25 -35 0 Z" fill="none" stroke="url(#textGrad)" stroke-width="4" filter="url(#glow)"/>
+      <polygon points="-5,-8 10,0 -5,8" fill="#38bdf8"/>
+    </g>
+
+    <!-- Main Title -->
+    <text x="600" y="210" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="52" font-weight="900" fill="url(#textGrad)" letter-spacing="1.5" filter="url(#glow)">
+      Awesome Cloud Media Transcoding
+    </text>
+
+    <!-- Subtitle -->
+    <text x="600" y="265" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="500" fill="#cbd5e1" letter-spacing="0.5">
+      🎬 Enterprise Cloud Encoding Platforms &amp; Open-Source Video Processing Tools ⚡
+    </text>
+
+    <!-- Tech Badges/Pills in Sub-foreground -->
+    <g transform="translate(600, 320)">
+      <!-- Pill 1: H.264 / HEVC / AV1 -->
+      <rect x="-240" y="-18" width="140" height="32" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+      <text x="-170" y="3" font-family="sans-serif" font-size="13" font-weight="600" fill="#38bdf8" text-anchor="middle">AV1 / HEVC / VVC</text>
+
+      <!-- Pill 2: Per-Title Encoding -->
+      <rect x="-85" y="-18" width="170" height="32" rx="16" fill="#1e293b" stroke="#818cf8" stroke-width="1.5"/>
+      <text x="0" y="3" font-family="sans-serif" font-size="13" font-weight="600" fill="#818cf8" text-anchor="middle">Per-Title Optimization</text>
+
+      <!-- Pill 3: VOD & Live Streaming -->
+      <rect x="100" y="-18" width="140" height="32" rx="16" fill="#1e293b" stroke="#c084fc" stroke-width="1.5"/>
+      <text x="170" y="3" font-family="sans-serif" font-size="13" font-weight="600" fill="#c084fc" text-anchor="middle">VOD &amp; Live Pipelines</text>
+    </g>
+  </g>
+</svg>
