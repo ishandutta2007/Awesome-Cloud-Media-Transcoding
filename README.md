@@ -70,7 +70,7 @@ The cloud video transcoding sector is estimated at **$1.8B - $2.5B in market siz
 
 ## 🔓 Open-Source GitHub Projects 🛠️
 
-*Sorted by GitHub Star Count (Descending)* 🌟
+*Sorted by GitHub Stars_Count (Descending)* 🌟
 
 - **[FFmpeg](https://github.com/FFmpeg/FFmpeg)** [![Stars](https://img.shields.io/github/stars/FFmpeg/FFmpeg?style=social&color=white)](https://github.com/FFmpeg/FFmpeg/stargazers)  
   **The universal cross-platform multimedia framework** — Complete open-source solution to record, convert, transcode, mux, demux, stream, filter, and play video and audio files. Supports virtually every video codec (H.264, HEVC, AV1, VP9, ProRes) and hardware acceleration APIs (NVENC, QuickSync, VAAPI, VideoToolbox). 🎥
@@ -98,7 +98,7 @@ Contributions are welcome! Follow these steps to submit new cloud video transcod
 
 1. 🍴 **Fork** the repository.
 2. 📝 **Add/edit** entries in `README.md` maintaining table/list structure and formatting.
-3. 🔗 Include project title, official website/GitHub link, exact star count, license, and brief SEO-rich description.
+3. 🔗 Include project title, official website/GitHub link, exact Stars_Count, license, and brief SEO-rich description.
 4. 🚀 Submit a **Pull Request** with a descriptive summary of your changes.
 
 ---
